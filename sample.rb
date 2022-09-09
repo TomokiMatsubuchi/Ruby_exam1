@@ -3,7 +3,9 @@ def form
   while true
     puts "1から5の数字で評価を入力してください。"
     point = gets.to_i
-    if point == 1..5
+    if point <= 0 || point >5
+      puts "1から5で入力してください"
+    else
       puts "コメントを入力してください"
       comment = gets.chomp
       post = "ポイント: #{point} コメント: #{comment}"
@@ -11,8 +13,6 @@ def form
           file.puts(post)
       end
       break
-    else
-      puts "1から5で入力してください"
     end
   end
 end
